@@ -1,4 +1,5 @@
 import controller.UserController;
+import entity.Admin;
 import entity.User;
 import utils.ScannerUtils;
 
@@ -27,6 +28,51 @@ public class Program {
     }
 
     private static void menu(User user) {
-        System.out.println("Login thành công " + user.getFullName());
+        while (true){
+            System.out.println("====== User manage =====");
+            System.out.println("1. Hiển thị toàn bộ user");
+            System.out.println("2. Hiển thị user theo id");
+            System.out.println("3. Xoá user theo id");
+            int maxMenu = 3;
+            if (user instanceof Admin){
+                maxMenu = 4;
+                System.out.println("4. Thêm user");
+            }
+            System.out.println("0. Thoát");
+            System.out.println("Chọn menu:");
+            int menu = ScannerUtils.inputFunction(0, maxMenu);
+            switch (menu){
+                case 1:
+                    getAllUsers();
+                    break;
+                case 2:
+                    getUserById();
+                    break;
+                case 3:
+                    deleteUserById();
+                    break;
+                case 4:
+                    addUser();
+                    break;
+                case 0:
+                    return;
+            }
+        }
+    }
+
+    private static void addUser() {
+
+    }
+
+    private static void deleteUserById() {
+
+    }
+
+    private static void getUserById() {
+
+    }
+
+    private static void getAllUsers() {
+
     }
 }

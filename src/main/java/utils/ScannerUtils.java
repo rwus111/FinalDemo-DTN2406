@@ -19,7 +19,7 @@ public class ScannerUtils {
     public static String inputEmail() {
         while (true) {
             String email = ScannerUtils.inputString();
-            if (email == null || !email.contains("@")) {
+            if (!email.contains("@")) {
                 System.err.println("Email không hợp lệ");
                 System.out.print("Mời bạn nhập lại email: ");
             } else {
